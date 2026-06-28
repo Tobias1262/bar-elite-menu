@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    background-color: #000;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+.pantalla {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+
+.pantalla h1 {
+
+    font-size: 45px;
+
+    font-style: italic;
+
+    text-transform: uppercase;
+
+    margin-bottom: 40px;
+
+    color: white;
+
+}
+
+
+
+.pantalla h2 {
+
+    font-size: 38px;
+
+    font-style: italic;
+
+    text-transform: uppercase;
+
+    margin-bottom: 45px;
+
+    color: #ff4fa3;
+
+}
+
+
+
+
+.idiomas a {
+
+    display: block;
+
+    text-decoration: none;
+
+    font-size: 32px;
+
+    font-style: italic;
+
+    text-transform: uppercase;
+
+    margin: 25px;
+
+    transition: 0.3s;
+
+}
+
+
+
+
+.rosa {
+
+    color: #ff4fa3;
+
+}
+
+
+
+.amarillo {
+
+    color: #ffd900;
+
+}
+
+
+
+.azul {
+
+    color: #00aaff;
+
+}
+
+
+
+.naranja {
+
+    color: #ff8c00;
+
+}
+
+
+
+
+
+.idiomas a:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+
+/* evita marcas azules al tocar en móvil */
+
+a {
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+* {
+
+    user-select: none;
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+.pantalla h1 {
+
+    font-size:32px;
+
+}
+
+
+.pantalla h2 {
+
+    font-size:30px;
+
+}
+
+
+.idiomas a {
+
+    font-size:25px;
+
+}
+
+
+}

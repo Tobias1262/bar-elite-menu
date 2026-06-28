@@ -1,0 +1,255 @@
+   body {
+
+    margin: 0;
+    padding: 35px;
+
+    background-color: #000;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+/* TITULO PRINCIPAL */
+
+h1 {
+
+    text-align: center;
+
+    font-size: 45px;
+
+    font-style: italic;
+
+    text-transform: uppercase;
+
+    margin-bottom: 60px;
+
+    color: white;
+
+}
+
+
+
+
+
+/* SECCIONES */
+
+.seccion {
+
+    margin-bottom: 45px;
+
+}
+
+
+
+/* TITULOS */
+
+h2 {
+
+    font-size: 38px;
+
+    font-style: italic;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+
+
+/* COLORES DE CADA TITULO */
+
+
+.sandwiches h2 {
+
+    color: #ff4fa3;
+
+}
+
+
+
+.bocadillos h2 {
+
+    color: #ffd900;
+
+}
+
+
+
+.ensaladas h2 {
+
+    color: #00aaff;
+
+}
+
+
+
+.tabla h2 {
+
+    color: #ff8c00;
+
+}
+
+
+
+.focaccia h2 {
+
+    color: #ff4fa3;
+
+}
+
+
+
+.formaggi h2 {
+
+    color: #ffd900;
+
+}
+
+
+
+.piadinas h2 {
+
+    color: #00aaff;
+
+}
+
+
+
+.pizzas h2 {
+
+    color: #ff8c00;
+
+}
+
+
+
+.dulces h2 {
+
+    color: #ff4fa3;
+
+}
+
+
+
+
+
+/* PRODUCTOS */
+
+.producto {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    width: 100%;
+
+    margin: 14px 0;
+
+    font-size: 18px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+
+
+
+/* NOMBRE */
+
+.producto span:first-child {
+
+    text-align: left;
+
+    max-width: 80%;
+
+}
+
+
+
+
+
+/* PRECIO */
+
+.producto span:last-child {
+
+    text-align: right;
+
+    margin-left: 20px;
+
+    white-space: nowrap;
+
+}
+
+
+
+
+
+/* DESCRIPCIONES */
+
+.descripcion {
+
+    color: #ccc;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    text-transform: uppercase;
+
+    margin-top: 5px;
+
+}
+
+
+
+
+
+/* VERSION MOVIL (QR) */
+
+
+@media(max-width:600px){
+
+
+body {
+
+    padding: 20px;
+
+}
+
+
+h1 {
+
+    font-size: 32px;
+
+}
+
+
+
+h2 {
+
+    font-size: 28px;
+
+}
+
+
+
+.producto {
+
+    font-size: 15px;
+
+}
+
+
+}
