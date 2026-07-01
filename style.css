@@ -1,255 +1,285 @@
-   body {
-
+* {
     margin: 0;
-    padding: 35px;
-
-    background-color: #000;
-
-    color: white;
-
-    font-family: Arial, Helvetica, sans-serif;
-
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-
-/* TITULO PRINCIPAL */
-
-h1 {
-
-    text-align: center;
-
-    font-size: 45px;
-
-    font-style: italic;
-
-    text-transform: uppercase;
-
-    margin-bottom: 60px;
-
-    color: white;
-
+:root {
+    --fondo: #09080c;
+    --pizarra: #151219;
+    --tiza: #fff8ee;
+    --gris-tiza: #d8d0c8;
+    --dorado: #c4a719;
+    --rosa: #ff3fa5;
+    --naranja: #ff9851;
+    --azul: #55d9ff;
+    --amarillo: #ffe15a;
 }
 
-
-
-
-
-/* SECCIONES */
-
-.seccion {
-
-    margin-bottom: 45px;
-
+html {
+    background: var(--fondo);
 }
-
-
-
-/* TITULOS */
-
-h2 {
-
-    font-size: 38px;
-
-    font-style: italic;
-
-    text-transform: uppercase;
-
-    margin-bottom: 25px;
-
-}
-
-
-
-
-
-/* COLORES DE CADA TITULO */
-
-
-.sandwiches h2 {
-
-    color: #ff4fa3;
-
-}
-
-
-
-.bocadillos h2 {
-
-    color: #ffd900;
-
-}
-
-
-
-.ensaladas h2 {
-
-    color: #00aaff;
-
-}
-
-
-
-.tabla h2 {
-
-    color: #ff8c00;
-
-}
-
-
-
-.focaccia h2 {
-
-    color: #ff4fa3;
-
-}
-
-
-
-.formaggi h2 {
-
-    color: #ffd900;
-
-}
-
-
-
-.piadinas h2 {
-
-    color: #00aaff;
-
-}
-
-
-
-.pizzas h2 {
-
-    color: #ff8c00;
-
-}
-
-
-
-.dulces h2 {
-
-    color: #ff4fa3;
-
-}
-
-
-
-
-
-/* PRODUCTOS */
-
-.producto {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: flex-start;
-
-    width: 100%;
-
-    margin: 14px 0;
-
-    font-size: 18px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.5px;
-
-}
-
-
-
-
-
-/* NOMBRE */
-
-.producto span:first-child {
-
-    text-align: left;
-
-    max-width: 80%;
-
-}
-
-
-
-
-
-/* PRECIO */
-
-.producto span:last-child {
-
-    text-align: right;
-
-    margin-left: 20px;
-
-    white-space: nowrap;
-
-}
-
-
-
-
-
-/* DESCRIPCIONES */
-
-.descripcion {
-
-    color: #ccc;
-
-    font-size: 15px;
-
-    line-height: 1.5;
-
-    text-transform: uppercase;
-
-    margin-top: 5px;
-
-}
-
-
-
-
-
-/* VERSION MOVIL (QR) */
-
-
-@media(max-width:600px){
-
 
 body {
-
-    padding: 20px;
-
+    min-height: 100vh;
+    padding: 24px;
+    color: var(--tiza);
+    font-family: "Trebuchet MS", "Arial Narrow", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 18% 4%, rgba(255,255,255,0.10), transparent 230px),
+        radial-gradient(circle at 84% 12%, rgba(196,167,25,0.14), transparent 260px),
+        linear-gradient(135deg, #070609 0%, #18131d 52%, #08070b 100%);
 }
 
-
-h1 {
-
-    font-size: 32px;
-
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.2;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.14) 0 1px, transparent 1px);
+    background-size: 100% 7px, 28px 28px;
 }
 
+.menu-header {
+    width: min(100%, 900px);
+    margin: 0 auto 42px;
+    padding: 26px 16px 20px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
 
+.logo-menu {
+    width: min(72vw, 260px);
+    height: auto;
+    display: block;
+    margin: 0 auto 16px;
+    filter:
+        drop-shadow(0 0 8px rgba(196,167,25,0.32))
+        drop-shadow(0 0 18px rgba(196,167,25,0.18));
+}
+
+.menu-header h1 {
+    color: var(--tiza);
+    font-size: clamp(34px, 8vw, 56px);
+    font-style: italic;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 4px rgba(255,255,255,0.7),
+        0 0 12px rgba(255,255,255,0.22);
+}
+
+.menu-contenido {
+    width: 100%;
+}
+
+.seccion {
+    width: min(100%, 900px);
+    margin: 0 auto 42px;
+    padding: 24px 18px 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.seccion::before,
+.seccion::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    border: 3px solid transparent;
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+.seccion::before {
+    left: 0;
+    top: 14px;
+    width: 34%;
+    height: 72%;
+    border-left-color: currentColor;
+    border-top-color: currentColor;
+}
+
+.seccion::after {
+    right: 0;
+    bottom: 0;
+    width: 34%;
+    height: 72%;
+    border-right-color: currentColor;
+    border-bottom-color: currentColor;
+}
 
 h2 {
-
-    font-size: 28px;
-
+    margin: 0 0 22px;
+    position: relative;
+    z-index: 1;
+    color: currentColor;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 8.5vw, 68px);
+    font-style: italic;
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: none;
+    text-shadow: 0 0 12px currentColor;
 }
 
-
+.subtitulo {
+    margin-top: 28px;
+    font-size: clamp(30px, 7vw, 54px);
+}
 
 .producto {
-
-    font-size: 15px;
-
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 16px;
+    align-items: start;
+    margin: 12px 0;
 }
 
+.nombre,
+.precio {
+    color: var(--tiza);
+    font-size: clamp(18px, 4.3vw, 27px);
+    font-style: italic;
+    font-weight: 900;
+    line-height: 1.06;
+    text-transform: uppercase;
+    text-shadow: 0 0 6px rgba(255,255,255,0.18);
+}
+
+.precio {
+    white-space: nowrap;
+}
+
+.descripcion {
+    max-width: 680px;
+    margin-top: 5px;
+    color: var(--gris-tiza);
+    font-size: clamp(14px, 3.2vw, 18px);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.sandwiches,
+.focaccia,
+.dulces {
+    color: var(--rosa);
+}
+
+.bocadillos,
+.formaggi {
+    color: var(--amarillo);
+}
+
+.ensaladas,
+.piadinas {
+    color: var(--azul);
+}
+
+.tabla,
+.pizzas {
+    color: var(--naranja);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 16px 12px 28px;
+    }
+
+    .menu-header {
+        margin-bottom: 30px;
+        padding-top: 18px;
+    }
+
+    .logo-menu {
+        width: min(78vw, 220px);
+        margin-bottom: 12px;
+    }
+
+    .seccion {
+        margin-bottom: 34px;
+        padding: 20px 12px 24px;
+    }
+
+    .seccion::before,
+    .seccion::after {
+        width: 36%;
+        height: 68%;
+        border-width: 2px;
+    }
+
+    h2 {
+        margin-bottom: 18px;
+    }
+
+    .producto {
+        gap: 10px;
+        margin: 10px 0;
+    }
+}
+
+/* ==========================
+   ILUSTRACIONES DEL MENÚ
+========================== */
+
+.seccion{
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagen de fondo */
+
+.icono-fondo{
+    position:absolute;
+
+    top:-5%;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:90%;
+    height:110%;
+
+    object-fit:contain;
+
+    opacity:.05;
+
+    filter:grayscale(100%) brightness(3);
+
+    pointer-events:none;
+    user-select:none;
+
+    z-index:0;
+
+    transition:transform .25s ease;
+}
+
+/* Efecto al pasar el mouse */
+
+.seccion:hover .icono-fondo{
+    transform:translateX(-50%) translateY(20px);
+}
+
+/* Todo el contenido arriba */
+
+.seccion > *:not(.icono-fondo){
+    position:relative;
+    z-index:2;
+}
+
+@media (max-width:600px){
+
+    .icono-fondo{
+        width:95%;
+        height:105%;
+        opacity:.06;
+    }
 
 }
