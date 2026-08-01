@@ -10,6 +10,7 @@
     --tiza: #fff8ee;
     --gris-tiza: #d8d0c8;
     --dorado: #c4a719;
+    --dorado-claro: #f3d75a;
     --rosa: #ff3fa5;
     --naranja: #ff9851;
     --azul: #55d9ff;
@@ -46,20 +47,80 @@ body::before {
 .menu-header {
     width: min(100%, 900px);
     margin: 0 auto 42px;
-    padding: 26px 16px 20px;
+    padding: 18px 16px 20px;
     position: relative;
     z-index: 1;
     text-align: center;
 }
 
-.logo-menu {
-    width: min(72vw, 260px);
-    height: auto;
-    display: block;
-    margin: 0 auto 16px;
-    filter:
-        drop-shadow(0 0 8px rgba(196,167,25,0.32))
-        drop-shadow(0 0 18px rgba(196,167,25,0.18));
+.logo-codigo {
+    width: min(100%, 420px);
+    min-height: 205px;
+    margin: 0 auto 18px;
+    padding: 10px 18px 12px;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+    justify-items: center;
+    color: var(--dorado);
+    text-decoration: none;
+}
+
+.logo-codigo::before {
+    content: "";
+    position: absolute;
+    left: 34px;
+    right: 34px;
+    top: 48px;
+    bottom: 42px;
+    border: 3px solid var(--dorado);
+    border-radius: 50%;
+    transform: rotate(-7deg);
+    filter: drop-shadow(0 0 7px rgba(196,167,25,0.45));
+}
+
+.rubro {
+    position: relative;
+    z-index: 2;
+    max-width: 340px;
+    color: var(--dorado-claro);
+    font-size: clamp(11px, 2.5vw, 15px);
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    transform: rotate(-7deg);
+    text-shadow: 0 0 10px rgba(196,167,25,0.38);
+}
+
+.logo-centro,
+.firma {
+    position: relative;
+    z-index: 2;
+}
+
+.elite {
+    color: var(--dorado);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(72px, 15vw, 110px);
+    font-style: italic;
+    font-weight: 900;
+    line-height: 0.78;
+    text-shadow:
+        0 0 2px rgba(255,255,255,0.45),
+        0 0 18px rgba(196,167,25,0.32);
+}
+
+.firma {
+    margin-top: 2px;
+    color: var(--dorado-claro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(24px, 5.4vw, 36px);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1;
+    transform: rotate(-6deg);
+    text-shadow: 0 0 12px rgba(196,167,25,0.30);
 }
 
 .menu-header h1 {
@@ -84,6 +145,7 @@ body::before {
     padding: 24px 18px 28px;
     position: relative;
     z-index: 1;
+    overflow: hidden;
 }
 
 .seccion::before,
@@ -116,7 +178,7 @@ body::before {
 h2 {
     margin: 0 0 22px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     color: currentColor;
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(36px, 8.5vw, 68px);
@@ -134,7 +196,7 @@ h2 {
 
 .producto {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 16px;
@@ -189,24 +251,71 @@ h2 {
     color: var(--naranja);
 }
 
+.icono-fondo {
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    width: 90%;
+    height: 110%;
+    object-fit: contain;
+    opacity: 0.045;
+    filter: grayscale(100%) brightness(3);
+    transform: translateX(-50%);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    transition: transform 0.25s ease;
+}
+
+.seccion:hover .icono-fondo {
+    transform: translateX(-50%) translateY(20px);
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 @media (max-width: 600px) {
     body {
-        padding: 16px 12px 28px;
+        padding: 12px 10px 25px;
     }
 
     .menu-header {
-        margin-bottom: 30px;
-        padding-top: 18px;
+        margin-bottom: 28px;
+        padding: 8px 8px 12px;
     }
 
-    .logo-menu {
-        width: min(78vw, 220px);
+    .logo-codigo {
+        width: 95%;
+        min-height: 178px;
+        padding: 8px 10px 10px;
         margin-bottom: 12px;
     }
 
+    .logo-codigo::before {
+        left: 14px;
+        right: 14px;
+        top: 42px;
+        bottom: 38px;
+        border-width: 2px;
+    }
+
+    .rubro {
+        max-width: 275px;
+        font-size: 11px;
+    }
+
+    .elite {
+        font-size: clamp(58px, 20vw, 86px);
+    }
+
+    .firma {
+        font-size: clamp(20px, 7vw, 30px);
+    }
+
     .seccion {
-        margin-bottom: 34px;
-        padding: 20px 12px 24px;
+        padding: 18px 10px 22px;
+        margin-bottom: 30px;
     }
 
     .seccion::before,
@@ -217,69 +326,34 @@ h2 {
     }
 
     h2 {
-        margin-bottom: 18px;
+        margin-bottom: 16px;
+        font-size: 42px;
     }
 
     .producto {
-        gap: 10px;
-        margin: 10px 0;
-    }
-}
-
-/* ==========================
-   ILUSTRACIONES DEL MENÚ
-========================== */
-
-.seccion{
-    position: relative;
-    overflow: hidden;
-}
-
-/* Imagen de fondo */
-
-.icono-fondo{
-    position:absolute;
-
-    top:-5%;
-    left:50%;
-    transform:translateX(-50%);
-
-    width:90%;
-    height:110%;
-
-    object-fit:contain;
-
-    opacity:.05;
-
-    filter:grayscale(100%) brightness(3);
-
-    pointer-events:none;
-    user-select:none;
-
-    z-index:0;
-
-    transition:transform .25s ease;
-}
-
-/* Efecto al pasar el mouse */
-
-.seccion:hover .icono-fondo{
-    transform:translateX(-50%) translateY(20px);
-}
-
-/* Todo el contenido arriba */
-
-.seccion > *:not(.icono-fondo){
-    position:relative;
-    z-index:2;
-}
-
-@media (max-width:600px){
-
-    .icono-fondo{
-        width:95%;
-        height:105%;
-        opacity:.06;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        margin: 12px 0;
     }
 
+    .nombre,
+    .precio {
+        font-size: 20px;
+    }
+
+    .descripcion {
+        font-size: 14px;
+    }
+
+    .icono-fondo {
+        width: 120%;
+        height: 120%;
+        opacity: 0.035;
+    }
+
+    .sandwiches .icono-fondo,
+    .pizzas .icono-fondo {
+        width: 130%;
+        height: 130%;
+    }
 }
